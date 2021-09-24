@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 const routes = [
   {
     path: '',
-    redirect: '/alumnos/:id'
+    redirect: '/alumnos/Listado'
   },
   {
     path: '/alumnos/:id',
