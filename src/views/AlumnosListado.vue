@@ -18,11 +18,12 @@
             <img src="../../resources/avatar.png">
           </ion-avatar>
           <ion-label>
-            <h2><b>Nombres: </b>{{alumno.name}}</h2>
-            <h2><b>Apellidos: </b> {{alumno.last_name}}</h2>
-            <h2><b>CUI: </b> {{alumno.cui}}</h2>
-            <h2><b>DNI: </b> {{alumno.dni}}</h2>
-            <ion-button color="tertiary" expand="full" @click="viewDetail(alumno)">
+            <h2><b>Nombres: </b>{{ alumno.name }}</h2>
+            <h2><b>Apellidos: </b> {{ alumno.last_name }}</h2>
+            <h2><b>CUI: </b> {{ alumno.cui }}</h2>
+            <h2><b>DNI: </b> {{ alumno.dni }}</h2>
+            <ion-button color="tertiary" expand="full" @click="viewDetail(alumno.id)">
+              Ver detalle
             </ion-button>
           </ion-label>
         </ion-item>
@@ -75,15 +76,15 @@ export default {
     getAllAlumnos() {
       AlumnosService.getAll().then(
           (response) => {
-            this.listAlumnos = response
+            this.listAlumnos = response.data
           },
-          (error) =>{
+          (error) => {
             console.log(error)
           }
       )
     },
-    viewDetail(alumno) {
-      this.$router.push({name: 'detail', params: {alumno}})
+    viewDetail(idAlumno) {
+      this.$router.push({path: 'detalle', params: {id:idAlumno, }})
     },
   }
 }

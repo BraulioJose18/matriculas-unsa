@@ -39,19 +39,29 @@ import {
   IonCardContent,
   IonCard,
 } from '@ionic/vue';
+import EnrollmentService from "../servicios/enrollment/enrollment.service";
+
 export default {
   name: "AlumnoDetalle",
-  props: ['alumno'],
   data() {
-    return {
-
-    }
+    return {}
   },
   methods: {
-
+    getStudentDetailById(id) {
+      EnrollmentService.getStudentDetailById(id).then(
+          (response) => {
+            console.log(response.data.student)
+            this.alumno = response.data.student
+          },
+          (error) => {
+            console.log(error)
+          }
+      )
+    }
   },
-  mounted() {
-    console.log(this.alumno)
+  beforeMount() {
+    console.log(this.$route.params.id)
+    this.getStudentDetailById(this.$route.params.id)
   },
   components: {
     IonButtons,
