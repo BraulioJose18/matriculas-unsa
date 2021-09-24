@@ -3,11 +3,18 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 const routes = [
   {
     path: '',
-    redirect: '/folder/Inbox'
+    redirect: '/alumnos/:id'
   },
   {
-    path: '/folder/:id',
-    component: () => import ('../views/Folder.vue')
+    path: '/alumnos/:id',
+    name: 'listado_alumnos',
+    component: () => import ('../views/AlumnosListado.vue')
+  },
+  {
+    path: '/alumnos/:id/detalle',
+    name: 'detalle_alumno',
+    component: () => import('../views/AlumnoDetalle.vue'),
+    props: true,
   }
 ]
 
