@@ -25,6 +25,20 @@
 </template>
 
 <script>
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardHeader,
+  IonCardContent,
+  IonCard,
+} from '@ionic/vue';
 export default {
   name: "AlumnoDetalle",
   props: ['alumno'],
@@ -38,7 +52,21 @@ export default {
   },
   mounted() {
     console.log(this.alumno)
-  }
+  },
+  components: {
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonMenuButton,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+    IonCard,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardHeader,
+    IonCardContent,
+  },
 }
 </script>
 
