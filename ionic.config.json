@@ -1,0 +1,8 @@
+{
+  "name": "matriculas_unsa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "55625ef8"
+}
